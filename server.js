@@ -1,7 +1,7 @@
 const amqp = require("amqplib");
 const WebSocket = require("ws");
 
-const RABBITMQ_URL = "amqp://rabbitmq:rabbitmq@localhost:5672";
+const RABBITMQ_URL = "amqp://guest:guest@localhost:5672";
 const EXCHANGE_NAME = "workers_queue";
 const ROUTING_KEY = "hash_task";
 
