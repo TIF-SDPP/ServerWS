@@ -1,6 +1,8 @@
 {
+  "type": "module",
   "dependencies": {
     "amqplib": "^0.10.5",
+    "dotenv": "^16.5.0",
     "ws": "^8.18.0"
   }
 }
