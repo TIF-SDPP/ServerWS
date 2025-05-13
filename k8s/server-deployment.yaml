@@ -5,7 +5,7 @@ metadata:
   namespace: default
 
 spec:
-  replicas: 1
+  replicas: 2
 
   selector:
     matchLabels:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: server-app
-        image: leoduville5/server-app:v13
+        image: leoduville5/server-app:v16
         imagePullPolicy: Always
         # resources:
         #   requests:

@@ -5,7 +5,7 @@
   const RABBITMQ_URL = process.env.RABBITMQ_URL;
   const EXCHANGE_NAME = process.env.EXCHANGE_NAME;
   const ROUTING_KEY = process.env.ROUTING_KEY;
-
+  console.log(RABBITMQ_URL)
   const wss = new WebSocketServer({ port: 80 });
 
   async function start() {
