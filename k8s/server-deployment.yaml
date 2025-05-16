@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: server-app
-        image: leoduville5/server-app:v16
+        image: leoduville5/server-app:v17
         imagePullPolicy: Always
         # resources:
         #   requests:

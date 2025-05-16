@@ -13,7 +13,7 @@
       const conn = await amqp.connect(RABBITMQ_URL);
       const ch = await conn.createChannel();
       await ch.assertExchange(EXCHANGE_NAME, "topic", { durable: true });
-      const q = await ch.assertQueue("", { exclusive: true });
+      const q = await ch.assertQueue(EXCHANGE_NAME);
 
       await ch.bindQueue(q.queue, EXCHANGE_NAME, ROUTING_KEY);
 
