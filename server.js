@@ -25,13 +25,21 @@
           console.log("Mensaje recibido:", data);
 
           // Enviar el mensaje a todos los clientes WebSocket
+          let delivered = false;
           wss.clients.forEach((client) => {
             if (client.readyState === WebSocket.OPEN) {
               client.send(JSON.stringify(data));
+              delivered = true;
             }
           });
 
-          ch.ack(msg);
+          if (delivered) {
+            console.log("Mensaje enviado, enviando ACK...");
+            ch.ack(msg);
+          } else {
+            console.log("No hay workers activos, enviando NACK...");
+            ch.nack(msg);
+          }
         }
       });
     } catch (error) {
